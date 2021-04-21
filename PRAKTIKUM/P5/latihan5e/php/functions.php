@@ -50,19 +50,3 @@ function hapus($id)
 
     return mysqli_affected_rows($conn);
 }
-function ubah($data) {
-    $conn = koneksi();
-    
-    $id = htmlspecialchars($data['id']);
-    $nama = htmlspecialchars($data['nama']);
-    $email = htmlspecialchars($data['email']);
-    $jurusan = htmlspecialchars($data['jurusan']);
-    $img = htmlspecialchars($data['img']);
-    $query = "UPDATE `mahasiswa` SET `nama`='$nama',`email`='$email',`jurusan`='$jurusan',`img`='$img'
-    WHERE id = $id
-    ";
-    mysqli_query($conn, $query);
-    return mysqli_affected_rows($conn);
-}
-
-?>
